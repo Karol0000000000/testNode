@@ -1,3 +1,4 @@
+require('dotenv').config({path: '.env'});
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -25,6 +26,7 @@ app.use(session({
 app.use(flash());
 
 app.use('/', routes);
+
 app.use(errors.notFound);
 app.use(errors.catchErrors);
 
